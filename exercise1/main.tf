@@ -16,7 +16,7 @@ data "aws_subnet" "public_subnet" {
 
 resource "aws_instance" "cluster-ec2-instance" {
   ami = "ami-07eb698ce660402d2"
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
 
   iam_instance_profile = "${aws_iam_instance_profile.ecs_cluster_instance_profile.name}"
   security_groups = ["${aws_security_group.ecs-instance-security.id}"]
